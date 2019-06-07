@@ -8,6 +8,7 @@
     <link
       href="https://fonts.googleapis.com/css?family=Domine:400,700&display=swap"
       rel="stylesheet"
+      lazyload
     />
 
     <!-- prettier-ignore -->
@@ -22,10 +23,7 @@
         padding: 0px;
         margin: 0px;
         overflow: hidden;
-      }
-
-      *,
-      body {
+        background: #152234;
         font-family: "Domine", serif;
       }
 
@@ -203,8 +201,6 @@
             } else if(r > -2.0){
                 color = color1;
             }
-
-
 
             gl_FragColor = vec4(color,1.0);
           }
