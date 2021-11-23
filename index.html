@@ -264,6 +264,7 @@
         font-weight: 400;
         color: white;
         font-family: "Open Sans", sans-serif;
+        overflow-x: hidden;
       }
 
       p,
@@ -279,6 +280,7 @@
         width: 100%;
         height: 100vh;
         overflow-y: scroll;
+        overflow-x: hidden;
       }
 
       .container {
@@ -347,20 +349,8 @@
       }
 
       .projects h1 {
-        margin-top: 100px;
-        margin-bottom: 60px;
-      }
-
-      .project {
-        display: flex;
-        position: relative;
-      }
-
-      .project > div:first-child {
-        width: 33.333vw;
-        padding-right: 30px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        text-align: center;
+        line-height: 1.4;
       }
 
       hr {
@@ -378,7 +368,7 @@
         top: 7vw;
       }
 
-      @media only screen and (max-width: 2200px) {
+      @media only screen and (max-width: 1200px) {
         .project {
           display: block;
         }
@@ -397,10 +387,6 @@
       @media only screen and (max-width: 960px) {
         h1 {
           font-size: 40px;
-        }
-
-        hr {
-          margin: 30px 0;
         }
 
         .project {
@@ -426,7 +412,7 @@
           <h2>Hello my name is</h2>
           <h1>Luke Nilaratna</h1>
           <p>
-            I'm a NYC based software developer and consultant with over 8 years
+            I'm a NYC based software developer and consultant with over 10 years
             of experience designing and building creative sites, mobile apps and
             interactive exhibits.
           </p>
@@ -437,7 +423,9 @@
         </div>
 
         <div class="projects">
-          <h1>— Recent Projects</h1>
+          <hr />
+          <h1>Recent Projects</h1>
+          <hr />
 
           <section class="project">
             <div>
@@ -503,36 +491,6 @@
                 <div
                   class="swiper-slide"
                   style="background-image: url(images/tzu4.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <section class="project">
-            <div>
-              <h3>Miners Need Cool Shoes</h3>
-              <p>
-                Designed, developed, and launched an online and Unity based 3d
-                drawing tool for Minecraft with over a million active users.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/mncs1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/mncs2.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/mncs3.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/mncs1.png)"
                 ></div>
               </div>
             </div>
