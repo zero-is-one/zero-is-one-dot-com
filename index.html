@@ -5,79 +5,17 @@
     <title>0is1 - Luke Nilaratna</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link
-      href="https://fonts.googleapis.com/css?family=Domine:400,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
       lazyload
     />
-
     <!-- prettier-ignore -->
     <style>
     /* css reset */
     a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}:focus{outline:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration{-webkit-appearance:none;-moz-appearance:none}input[type=search]{-webkit-appearance:none;-moz-appearance:none;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}textarea{overflow:auto;vertical-align:top;resize:vertical}audio,canvas,video{display:inline-block;max-width:100%}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}a:focus{outline:thin dotted}a:active,a:hover{outline:0}img{border:0;-ms-interpolation-mode:bicubic}figure{margin:0}form{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}button,html,input,select,textarea{color:#222}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}img{vertical-align:middle}fieldset{border:0;margin:0;padding:0}textarea{resize:vertical}.chromeframe{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}
     </style>
-
-    <style>
-      html,
-      body {
-        padding: 0px;
-        margin: 0px;
-        overflow: hidden;
-        background: #152234;
-        font-family: "Domine", serif;
-      }
-
-      div.content {
-        padding: 20px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        display: flex;
-        transform: translate(-50%, -50%);
-        width: 50%;
-        font-size: 2vw;
-        font-weight: bold;
-      }
-
-      p {
-        padding-top: 20px;
-        padding-top: 20px;
-        line-height: 1.4;
-        color: white;
-      }
-
-      p:last-child {
-        font-weight: normal;
-        font-size: 1.6vw;
-      }
-
-      a {
-        color: #d33c4f;
-      }
-
-      svg {
-        width: 7vw;
-        min-width: 100px;
-        margin-right: 4vw;
-      }
-
-      canvas {
-        width: 100%;
-        height: 100%;
-      }
-
-      @media only screen and (max-width: 960px) {
-        div.content {
-          flex-direction: column;
-          width: 65%;
-          font-size: 4vw;
-        }
-        p:last-child {
-          font-size: 3vw;
-        }
-      }
-    </style>
-
     <script id="2d-fragment-shader" type="x-shader/x-fragment">
       // <![CDATA[
           #ifdef GL_ES
@@ -214,7 +152,6 @@
             }
             // ]]>
     </script>
-
     <script>
       // Credit goes to Darryl Huffman https://codepen.io/darrylhuffman/pen/prrzVQ
       // I just modified
@@ -252,18 +189,7 @@
         gl.bufferData(
           gl.ARRAY_BUFFER,
           new Float32Array([
-            -1.0,
-            -1.0,
-            1.0,
-            -1.0,
-            -1.0,
-            1.0,
-            -1.0,
-            1.0,
-            1.0,
-            -1.0,
-            1.0,
-            1.0
+            -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0,
           ]),
           gl.STATIC_DRAW
         ); // ^^ That up there sets up the vertex's used to draw onto. I think at least, I haven't payed much attention to vertex's yet, for all I know I'm wrong.
@@ -309,44 +235,412 @@
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       }
 
-      window.addEventListener("load", function(event) {
+      window.addEventListener("load", function (event) {
         init();
       });
 
-      window.addEventListener("resize", function(event) {
+      window.addEventListener("resize", function (event) {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         gl.viewport(0, 0, window.innerWidth, window.innerHeight);
         locationOfResolution = gl.getUniformLocation(program, "u_resolution");
       });
     </script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      :root {
+        --swiper-theme-color: #d33c4f;
+      }
+      html,
+      body {
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+        background: #152234;
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      p,
+      span {
+        line-height: 1.8;
+        letter-spacing: 0.2px;
+      }
+
+      .content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-y: scroll;
+      }
+
+      .container {
+        width: 80vw;
+        padding: 20px;
+        margin: auto;
+      }
+
+      h1,
+      h3,
+      h4,
+      h5 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        font-weight: 700;
+        margin: 20px 0;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 28px;
+      }
+
+      a {
+        color: #d33c4f;
+      }
+
+      .intro,
+      footer {
+        padding-top: 100px;
+        max-width: 700px;
+      }
+
+      footer {
+        opacity: 0.3;
+      }
+
+      p {
+        margin-bottom: 4vh;
+      }
+
+      svg {
+        width: 7vw;
+        min-width: 100px;
+        margin-right: 4vw;
+      }
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        width: 40vw;
+        height: 16vw;
+      }
+
+      .projects h1 {
+        margin-top: 100px;
+        margin-bottom: 60px;
+      }
+
+      .project {
+        display: flex;
+        position: relative;
+      }
+
+      .project > div:first-child {
+        width: 33.333vw;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      hr {
+        padding: 0;
+        border: none;
+        border-top: medium double #ffffff0a;
+        color: #ffffff0a;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        margin: 45px 0;
+      }
+
+      .swiper-button-next {
+        right: -55px;
+        top: 7vw;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        .project {
+          display: block;
+        }
+        .project > div:first-child {
+          width: 100%;
+          padding-right: 0;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+        .swiper-button-next {
+          bottom: 6vw;
+          top: auto;
+        }
+      }
+
+      @media only screen and (max-width: 960px) {
+        h1 {
+          font-size: 40px;
+        }
+
+        hr {
+          margin: 30px 0;
+        }
+
+        .project {
+          display: block;
+          position: relative;
+        }
+
+        .swiper-slide {
+          width: 80vw;
+          height: 38vw;
+        }
+        .swiper-button-next {
+          display: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
     <div class="content">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.449 159.3628">
-          <g word-spacing="0">
-            <path
-              fill="#fff"
-              d="M16.016 80.569q0 16.9513 4.0916 31.7981l71.4287-75.4035Q85.925 26.4422 77.6247 20.8308q-8.1833-5.6114-19.1724-5.6114-20.5752 0-31.5642 17.5357-10.8722 17.4188-10.8722 47.814zm9.5861 44.7746q11.5736 20.5752 32.8502 20.5752 20.1076 0 31.2136-17.4188 11.106-17.5357 11.106-47.931 0-8.417-1.0522-15.899-1.0522-7.5988-2.9227-14.4961l-71.1949 75.1697zM0 80.569q0-15.3145 3.2733-29.5769Q6.5467 36.7298 13.444 25.7408q6.8974-10.989 18.0034-17.5357 11.2228-6.6636 27.005-6.6636 15.782 0 26.888 6.6636 11.2228 6.5467 18.2371 17.5357 7.0143 10.989 10.1707 25.2514 3.1564 14.2624 3.1564 29.5769 0 15.3145-3.1564 29.5769-3.1564 14.2623-10.0538 25.1345-6.8974 10.872-18.1202 17.5357-11.106 6.5466-27.1219 6.5466-16.016 0-27.2388-6.5466-11.1059-6.6636-18.1202-17.5357-6.8974-10.8722-9.9369-25.1345Q0 95.8836 0 80.569zM228.449 158.7307h-67.9927v-14.231h25.6645V36.1249q-2.1893 4.987-6.933 10.7037-4.7437 5.5951-11.1902 10.3388-6.4466 4.622-14.231 7.7845-7.663 3.1624-15.934 3.1624V50.8425q7.4196 0 15.934-4.622 8.5142-4.6221 15.6906-11.7984 7.1763-7.1764 11.92-16.2988Q186.1208 9.0008 186.1208 0h16.7854v144.4997h25.5428v14.231z"
-            />
-          </g>
-        </svg>
-      </div>
-      <div>
-        <p>
-          — Hello <br />
-          I'm Luke Nilaratna, a Brooklyn based freelance mobile and web
-          developer with over 8 years of experience.
-        </p>
+      <div class="container">
+        <div class="intro">
+          <h2>Hello my name is</h2>
+          <h1>Luke Nilaratna</h1>
+          <p>
+            I'm a NYC based software developer and consultant with over 8 years
+            of experience designing and building creative sites, mobile apps and
+            interactive exhibits.
+          </p>
+          <h2>
+            Interested in working together?
+            <a href="mailto:luke@0is1.com">Let's talk.</a>
+          </h2>
+        </div>
 
-        <p>
-          Interested in working together?
-          <a href="mailto:luke@0is1.com">Let's talk.</a>
-        </p>
+        <div class="projects">
+          <h1>— Recent Projects</h1>
+
+          <section class="project">
+            <div>
+              <h3>Obama Foundation</h3>
+              <p>
+                Lead developer on several web projects including “Year in Hope”
+                website highlighting President Obama’s best picks of 2019.
+                Improved W3C site accessibility. Architected and created an
+                automated system for identifying mislabeled images and missing
+                image captioning data.
+              </p>
+            </div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/obama1.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/obama2.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/obama3.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/obama4.png)"
+                ></div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+          </section>
+          <hr />
+          <section class="project">
+            <div>
+              <h3>Tzu Chi USA</h3>
+              <p>
+                Full-stack development, design and consultation on all Tzuchi
+                digital properties (an international humanitarian organization
+                with 57 offices in the US and 21 million members worldwide).
+                Notable projects include architecting and developing a backend
+                visual page builder with multilingual support, e-commerce
+                integration for accepting donations, and custom apis for
+                miscellaneous internal tools.
+              </p>
+            </div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/tzu1.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/tzu2.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/tzu3.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/tzu4.png)"
+                ></div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+          </section>
+          <section class="project">
+            <div>
+              <h3>Miners Need Cool Shoes</h3>
+              <p>
+                Designed, developed, and launched an online and Unity based 3d
+                drawing tool for Minecraft with over a million active users.
+              </p>
+            </div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/mncs1.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/mncs2.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/mncs3.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/mncs1.png)"
+                ></div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+          </section>
+          <hr />
+          <section class="project">
+            <div>
+              <h3>Synchrony LEDs</h3>
+              <p>
+                Designed, developed, and launched iOS and Android apps that
+                interface with the patented Synchrony LED controller over
+                Bluetooth.
+              </p>
+            </div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/sy2.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/sy1.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/sy3.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/sy4.png)"
+                ></div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+          </section>
+          <hr />
+          <section class="project">
+            <div>
+              <h3>Higher Heights For America</h3>
+              <p>
+                Developed page building tools for creators to dynamically create
+                content. Developed reusable style components for site branding.
+              </p>
+            </div>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/hh1.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/hh2.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/hh3.png)"
+                ></div>
+                <div
+                  class="swiper-slide"
+                  style="background-image: url(images/hh4.png)"
+                ></div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+          </section>
+          <hr />
+          <h1>
+            Interested in working together?
+            <a href="mailto:luke@0is1.com">Let's talk.</a>
+          </h1>
+          <footer>
+            <p>
+              &copy; 2010
+              <script>
+                new Date().getFullYear() > 2010 &&
+                  document.write("-" + new Date().getFullYear());
+              </script>
+              , 0is1 Labs.
+            </p>
+          </footer>
+        </div>
       </div>
     </div>
+
     <canvas id="glscreen"></canvas>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var elements = document.querySelectorAll(".project");
+
+      Array.prototype.forEach.call(elements, function (el, i) {
+        new Swiper(el.querySelectorAll(".swiper-container")[0], {
+          slidesPerView: 1.3,
+          spaceBetween: 30,
+          grabCursor: true,
+          navigation: {
+            nextEl: el.querySelectorAll(".swiper-button-next")[0],
+          },
+          loop: true,
+          breakpoints: {
+            960: {
+              slidesPerView: 2.3,
+            },
+          },
+        });
+      });
+    </script>
   </body>
 </html>
