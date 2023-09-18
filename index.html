@@ -280,14 +280,8 @@
         top: 0;
         width: 100%;
         height: 100vh;
-        overflow-y: scroll;
+        overflow-y: hidden;
         overflow-x: hidden;
-      }
-
-      .container {
-        width: 80vw;
-        padding: 20px;
-        margin: auto;
       }
 
       h1,
@@ -316,7 +310,6 @@
 
       .intro,
       footer {
-        padding-top: 100px;
         max-width: 700px;
       }
 
@@ -423,260 +416,28 @@
 
   <body>
     <div class="content">
-      <div class="container">
-        <div class="intro">
+      <div
+        class="container"
+        style="
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div class="intro" style="padding-bottom: 9vh">
           <h2>Hello my name is</h2>
           <h1>Luke Nilaratna</h1>
           <p>
             I'm a NYC based software developer and consultant with over 10 years
             of experience designing and building creative sites, mobile apps and
-            interactive exhibits.
+            interactive experiences.
           </p>
           <h2>
             Interested in working together?
             <a href="mailto:luke@0is1.com">Let's talk.</a>
           </h2>
-        </div>
-
-        <div class="projects">
-          <hr />
-          <h1>Recent Projects</h1>
-          <hr />
-          <section class="project">
-            <div>
-              <h3>Hovercast</h3>
-              <div>
-                <span class="pill">AV Installation</span>
-                <span class="pill">Web</span>
-                <span class="pill">React</span>
-              </div>
-              <p>
-                Developer on interactive video platform that integrates user
-                interaction from many social platforms with streaming video.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/hover1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/hover3.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/hover2.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <hr />
-          <section class="project">
-            <div>
-              <h3>Obama Foundation — Obama.com</h3>
-              <div>
-                <span class="pill">WebGL</span>
-                <span class="pill">Micro-sites</span>
-                <span class="pill">React</span>
-                <span class="pill">AI</span>
-              </div>
-              <p>
-                Lead developer on several micro-sites including “Year in Hope”
-                website highlighting President Obama's best picks of 2019.
-                Improved W3C site accessibility. Architected and created an AI
-                automated system for identifying mislabeled images and missing
-                image captioning data.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/obama1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/obama2.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/obama3.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/obama4.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <hr />
-          <section class="project">
-            <div>
-              <h3>Liberty Science Center — Graffiti Wall</h3>
-              <div>
-                <span class="pill">OpenFrameworks</span>
-                <span class="pill">Physical Computing</span>
-                <span class="pill">Projection-Mapping</span>
-              </div>
-              <p>
-                Sole developer of Graffiti Wall for LSC's Communication exhibit.
-                Using state-of-the-art technology, the Graffiti Wall comes to
-                life with a semi-permeable screen, a cutting-edge camera, and a
-                powerful projector. Users wield a light source and direct it
-                towards the screen, the camera expertly captures the light's
-                position, transforming it into a vibrant display of virtual
-                spray paint.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/wall2.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/wall1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/wall3.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <hr />
-          <section class="project">
-            <div>
-              <h3>Tzu Chi USA</h3>
-              <div>
-                <span class="pill">APIs</span>
-                <span class="pill">Linux</span>
-                <span class="pill">Python</span>
-                <span class="pill">React</span>
-                <span class="pill">Payments</span>
-              </div>
-              <p>
-                Full-stack development, design and consultation on all Tzuchi
-                digital properties (an international humanitarian organization
-                with 57 offices in the US and 21 million members worldwide).
-                Notable projects include architecting and developing a backend
-                visual page builder with multilingual support, e-commerce
-                integration for accepting donations, and custom apis for
-                miscellaneous internal tools.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/tzu1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/tzu2.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/tzu3.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/tzu4.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <hr />
-          <section class="project">
-            <div>
-              <h3>Synchrony LEDs</h3>
-
-              <div>
-                <span class="pill">Physical Computing</span
-                ><span class="pill">Mobile</span>
-              </div>
-              <p>
-                Designed, developed, and launched iOS and Android mobile apps
-                that interface with the patented Synchrony LED Harware
-                controller over Bluetooth.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/sy2.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/sy1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/sy3.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/sy4.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <hr />
-          <section class="project">
-            <div>
-              <h3>Soft Services</h3>
-              <div>
-                <span class="pill">NodeJs</span><span class="pill">Mobile</span
-                ><span class="pill">React</span
-                ><span class="pill">ReactNative/Ionic</span>
-              </div>
-              <p>
-                Designed, developed, and launched internal mobile application
-                and web admin for testing skin care and beauty products.
-              </p>
-            </div>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/ss1.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/ss2.png)"
-                ></div>
-                <div
-                  class="swiper-slide"
-                  style="background-image: url(images/ss3.png)"
-                ></div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-          </section>
-          <hr />
-          <h1>
-            Interested in working together?
-            <a href="mailto:luke@0is1.com">Let's talk.</a>
-          </h1>
-          <footer>
-            <p>
-              &copy; 2010
-              <script>
-                new Date().getFullYear() > 2010 &&
-                  document.write("-" + new Date().getFullYear());
-              </script>
-              , 0is1 Labs.
-            </p>
-          </footer>
         </div>
       </div>
     </div>
